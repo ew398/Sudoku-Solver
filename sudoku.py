@@ -3,8 +3,15 @@ import pulp
 def sudoku_solver(puzzle):
     """
     Precondition:
-        Input: Sudoku puzzle written as 2D array. All unknown cells are listed as 0s
-        Returns: Corresponding puzzle solution
+        Input:
+            - Sudoku puzzle written as 2D array
+            - All unknown elements in sudoku puzzle are populated with 0s
+            - All known elements in sudoku puzzle are populated with their corresponding value
+        Returns:
+            - Solution array to the input array
+            - If there is no solution, an assertion error will be thrown
+            - If there is a unique solution, the corresponding 2D solution array will be shown
+            - If there multiple solutions, the first 2D array solution that the linear program comes across will be shown
     """
 
     # Common ranges to iterate on
@@ -45,16 +52,24 @@ def sudoku_solver(puzzle):
 
     # Solve Linear program
     problem.solve()
-    if problem.solve() != 1:
-        return Null
-    else:
-      solution = []
-      for row in nums:
-          for col in nums:
-              for val in nums:
-                  if x[(val, row, col)].varValue == 1:
-                      solution.append(val)
-      output = [0] * 9
-      for i in range(9):
-        output[i] = solution[9 * i : 9 * (i + 1)]
-      return output
+    assert problem.solve() == 1 # Make sure that at least one solution exists
+
+    # Initialize sudoku solution in 2D array
+    solution = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    for row in nums: #update elements in the solution array
+      for col in nums:
+        val = 1
+        while x[(val, row, col)].varValue == 0:
+          val += 1
+        else:
+          solution[row - 1][col - 1] = val
+    return solution
