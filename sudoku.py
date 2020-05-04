@@ -1,4 +1,3 @@
-!pip install pulp
 import pulp
 
 def sudoku_solver(puzzle):
