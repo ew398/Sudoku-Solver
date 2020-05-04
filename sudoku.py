@@ -9,7 +9,7 @@ def sudoku_solver(puzzle):
             - All known elements in sudoku puzzle are populated with their corresponding value
         Returns:
             - Solution array to the input array
-            - If there is no solution, an assertion error will be thrown
+            - If there is no solution, 0 will be returned
             - If there is a unique solution, the corresponding 2D solution array will be shown
             - If there multiple solutions, the first 2D array solution that the linear program comes across will be shown
     """
@@ -52,24 +52,25 @@ def sudoku_solver(puzzle):
 
     # Solve Linear program
     problem.solve()
-    assert problem.solve() == 1 # Make sure that at least one solution exists
+    if problem.solve() != 1:
+        return 0
+    else:
+        # Initialize sudoku solution in 2D array
+        solution = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    # Initialize sudoku solution in 2D array
-    solution = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-    for row in nums: #update elements in the solution array
-      for col in nums:
-        val = 1
-        while x[(val, row, col)].varValue == 0:
-          val += 1
-        else:
-          solution[row - 1][col - 1] = val
-    return solution
+        for row in nums: #update elements in the solution array
+          for col in nums:
+            val = 1
+            while x[(val, row, col)].varValue == 0:
+              val += 1
+            else:
+              solution[row - 1][col - 1] = val
+        return solution
