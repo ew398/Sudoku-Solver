@@ -1,8 +1,8 @@
 # Sudoku Solver
 In the past week , I wondered if it would be possible to automate solving a sudoku puzzle specifically with LPs (linear programs). 
-The rationale here is that linear programs are often much simpler than alternatives (such as neural nets) and more inferential.
+The rationale here is that linear programs are often simpler and more inferential than alternatives (such as brute force approaches and neural nets)
 
-In the space below, I'll outline the basics of linear programming and show how sudoku can be tailored to an LP.
+In the space below, I'll outline the basics of linear programming and show how sudoku puzzles can be tailored to an LP problem.
 
 
 Constraint 1
