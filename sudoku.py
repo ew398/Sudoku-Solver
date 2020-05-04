@@ -20,23 +20,23 @@ def sudoku_solver(puzzle):
     # Constraint 1: Make sure each cell has one value
     for row in nums:
         for col in nums:
-            problem += (pulp.lpSum([x(val, row, col) for val in nums]) == 1)
+            problem += (pulp.lpSum([x[(val, row, col)] for val in nums]) == 1)
 
     # Constraint 2: Make sure each cell in a row has a different value
     for val in nums:
         for col in nums:
-            problem += (pulp.lpSum([x(val, row, col) for row in nums]) == 1)
+            problem += (pulp.lpSum([x[(val, row, col)] for row in nums]) == 1)
 
     # Constraint 3: Make sure each cell in a column has a different value
     for val in nums:
         for row in nums:
-            problem += (pulp.lpSum([x(val, row, col) for col in nums]) == 1)
+            problem += (pulp.lpSum([x[(val, row, col)] for col in nums]) == 1)
 
     # Constraint 4: Ensure each cell in a 3 x 3 square has a different value
     for val in nums:
         for row3 in nums2:
             for col3 in nums2:
-                problem += (pulp.lpSum([x(val, row3, col3) for row in row3 for col in col3]) == 1)
+                problem += (pulp.lpSum([x[(val, row, col)] for row in row3 for col in col3]) == 1)
 
     # Constraint 5: Ensure additional constraints from specific puzzle are met
     for row in nums:
@@ -49,10 +49,13 @@ def sudoku_solver(puzzle):
     if problem.solve() != 1:
         return Null
     else:
-        output = [[0] * 9] * 9
-        for row in nums:
-            for col in nums:
-                for val in nums:
-                    if x[(val, row, col)].varValue == 1:
-                        output[row - 1][col - 1] = val
-        return output
+      solution = []
+      for row in nums:
+          for col in nums:
+              for val in nums:
+                  if x[(val, row, col)].varValue == 1:
+                      solution.append(val)
+      output = [0] * 9
+      for i in range(9):
+        output[i] = solution[9 * i : 9 * (i + 1)]
+      return output
