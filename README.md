@@ -13,11 +13,15 @@ If needed, an introduction can be found here: https://en.wikipedia.org/wiki/Line
 ## I. Decision Variables
 We'll use a set of binary variables ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
-where ![formula](https://render.githubusercontent.com/render/math?math=i%20\in%20(1,%202,%203,%20...%20,%209)) represents the values used to play sudoku
+where 
 
-and ![formula](https://render.githubusercontent.com/render/math?math=j%20\in%20(1,%202,%203,%20...%20,%209)) represents row number
+![formula](https://render.githubusercontent.com/render/math?math=i%20\in%20(1,%202,%203,%20...%20,%209)) represents the values used to play sudoku
 
-and ![formula](https://render.githubusercontent.com/render/math?math=k%20\in%20(1,%202,%203,%20...%20,%209)) represents column number
+![formula](https://render.githubusercontent.com/render/math?math=j%20\in%20(1,%202,%203,%20...%20,%209)) represents row number
+
+![formula](https://render.githubusercontent.com/render/math?math=k%20\in%20(1,%202,%203,%20...%20,%209)) represents column number
+
+
 
 So just to give a few examples of this notation,
 
