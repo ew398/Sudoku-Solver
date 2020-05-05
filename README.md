@@ -4,22 +4,26 @@ This repository demonstrates how to solve sudoku using linear [specifically inte
 
 The idea here is that an integer program should yield a more interpretable process than that of neural nets or more brute-force approaches like genetic algorithms. The run time for this approach may lose to faster alternatives, but a %timeit test shows solve times of 96.4 ms (with sample size 10 for a sample puzzle). Thus, any faster approaches will only be marginally quicker.
 
-Keep in mind this result could be anecdotal, so take my sample findings with a grain of salt. 
-
-
-
+Keep in mind this result could be anecdotal, so take these sample findings with a grain of salt. 
 
 # Technical Details
 The documentation below assumes familiarity with the concept of linear programs. 
 If needed, an introduction can be found here: https://en.wikipedia.org/wiki/Linear_programming
 
 ## I. Decision Variables
-Variable $X_{ijk}$ \in {0, 1} \forall (i, j, k) \in {1, 2, 3, ..., 9}^3 where
-$i \in {1, 2, 3, ..., 9}$ represents values
-$j \in {1, 2, 3, ..., 9}$ represents rows
-$k \in {1, 2, 3, ..., 9}$ represents columns
+We'll use a set of binary variables ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...,%209))
 
-Just for an example $X_{123} = 1$ means that value 1 occurs in row 2 column 3
+where ![formula](https://render.githubusercontent.com/render/math?math=i%20\in%20(1,%202,%203,%20...,%209)) represents the values 1 through 9 that a specified cell can take
+
+and ![formula](https://render.githubusercontent.com/render/math?math=j%20\in%20(1,%202,%203,%20...,%209)) represents row number
+
+and ![formula](https://render.githubusercontent.com/render/math?math=k%20\in%20(1,%202,%203,%20...,%209)) represents column number
+
+So just to give a few examples of this notation,
+
+![formula](https://render.githubusercontent.com/render/math?math=X_{123}%20=%201) means that the value 1 goes in the cell at row 2 column 3
+
+![formula](https://render.githubusercontent.com/render/math?math=X_{357}%20=%200) means that the value 3 does not go in the cell at row 5 column 7
 
 ## II. Objective Function
 We can set this to be constant, since we're simply concerned with having all constraints satisfied.
