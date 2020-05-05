@@ -38,13 +38,19 @@ Constraint 1: Ensure that each cell is given one value
 
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
+
+
 Constraint 2: Ensure that each value occurs in a row once 
 
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
+
+
 Constraint 3: Ensure that each value occurs in a column once 
 
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209))
+
+
 
 Constraint 4: Ensure that each value occurs in a 3 x 3 square once 
 
@@ -66,5 +72,43 @@ Constraint 4: Ensure that each value occurs in a 3 x 3 square once
 
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
+
+
 Constraint 5: Ensure that all hints from the input are used
+
 ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for all value, row, columns specified in a puzzle
+
+
+
+# Complete Linear Program
+Below is the reiterated format for a Sudoku LP
+
+Maximize 0
+
+Subject to ![formula](https://render.githubusercontent.com/render/math?math=\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+
+![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for puzzle hints
+
+where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
