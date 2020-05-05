@@ -6,7 +6,7 @@ The idea here is that an integer program should yield a more interpretable proce
 
 Keep in mind this result could be anecdotal, so take these sample findings with a grain of salt. 
 
-# Technical Details
+# Technical Explanation
 The documentation below assumes familiarity with the concept of linear programs. 
 If needed, an introduction can be found here: https://en.wikipedia.org/wiki/Linear_programming
 
@@ -114,3 +114,19 @@ Subject to
   ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for puzzle hints
 
 Where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+
+# Repository Code
+This repository contains two python files:
+1.) sudoku.py 
+- contains the method to solve a sudoku puzzle
+- note that the method sudoku_solver takes on one input parameter: puzzle
+- puzzle is a 9 x 9 2D array that stores the original puzzle. Unknown cells should be populated with 0s, Known cells should be populated with their respective values
+- the output returns as a 9 x 9 2D with the sudoku solution
+- if there is no possible solution, the output returns a 0
+
+2.) testcases.py 
+- contains test cases to check different inputs and edge cases that may occur
+- these test cases include checks for violations of each of the constraints, puzzles with unique solutions, puzzles with multiple solutions
+- a lingering issue is that I am unable to return all viable solutions for puzzles with multiple solutions
+- thus, I can't distinguish puzzles with unique solutions from those with more solutions
+
