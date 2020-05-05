@@ -117,16 +117,17 @@ Where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%2
 
 # Repository Code
 This repository contains two python files:
+
 1.) sudoku.py 
-- contains the method to solve a sudoku puzzle
-- note that the method sudoku_solver takes on one input parameter: puzzle
-- puzzle is a 9 x 9 2D array that stores the original puzzle. Unknown cells should be populated with 0s, Known cells should be populated with their respective values
-- the output returns as a 9 x 9 2D with the sudoku solution
-- if there is no possible solution, the output returns a 0
+- Contains the method to solve a sudoku puzzle
+- Note that the method sudoku_solver takes on one input parameter: puzzle
+- The puzzle is a 9 x 9 2D array that stores the original puzzle. Unknown cells should be populated with 0s, known cells should be populated with their respective values
+- The output returns as a 9 x 9 2D with the sudoku solution
+- If there is no possible solution, the output returns a 0
 
 2.) testcases.py 
-- contains test cases to check different inputs and edge cases that may occur
-- these test cases include checks for violations of each of the constraints, puzzles with unique solutions, puzzles with multiple solutions
-- a lingering issue is that I am unable to return all viable solutions for puzzles with multiple solutions
-- thus, I can't distinguish puzzles with unique solutions from those with more solutions
+- Contains test cases to check different inputs and edge cases that may occur
+- These test cases include checks for violations of each of the constraints, puzzles with unique solutions, puzzles with multiple solutions
+- A lingering issue is that I am unable to return all viable solutions for puzzles with multiple solutions
+- So in terms of oppotunities, I'm looking for an approach to distinguish sudokus with unique solutions from sudokus with multiple solutions
 
