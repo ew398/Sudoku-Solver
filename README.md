@@ -85,30 +85,32 @@ Below is the reiterated format for a Sudoku LP
 
 Maximize 0
 
-Subject to ![formula](https://render.githubusercontent.com/render/math?math=\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+Subject to 
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for puzzle hints
+  ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+  ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for puzzle hints
+
+Where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
