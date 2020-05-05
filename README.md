@@ -122,7 +122,7 @@ This repository contains two python files:
 - Contains the method to solve a sudoku puzzle
 - Note that the method sudoku_solver takes on one input parameter: puzzle
 - The puzzle is a 9 x 9 2D array that stores the original puzzle. Unknown cells should be populated with 0s, known cells should be populated with their respective values
-- The output returns as a 9 x 9 2D with the sudoku solution
+- The output returns as a 9 x 9 2D array with the sudoku solution
 - If there is no possible solution, the output returns a 0
 
 2.) testcases.py 
