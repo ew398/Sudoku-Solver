@@ -118,14 +118,14 @@ Where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%2
 # Repository Code
 This repository contains two python files:
 
-1.) sudoku.py 
+1) sudoku.py 
 - Contains the method to solve a sudoku puzzle
 - Note that the method sudoku_solver takes on one input parameter: puzzle
 - The puzzle is a 9 x 9 2D array that stores the original puzzle. Unknown cells should be populated with 0s, known cells should be populated with their respective values
 - The output returns as a 9 x 9 2D array with the sudoku solution
 - If there is no possible solution, the output returns a 0
 
-2.) testcases.py 
+2) testcases.py 
 - Contains test cases to check different inputs and edge cases that may occur
 - These test cases include checks for violations of each of the constraints, puzzles with unique solutions, puzzles with multiple solutions
 - A lingering issue is that I am unable to return all viable solutions for puzzles with multiple solutions
