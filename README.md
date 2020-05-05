@@ -31,7 +31,9 @@ The documentation below assumes familiarity with the concept of linear programs.
 If needed, an introduction can be found here: https://en.wikipedia.org/wiki/Linear_programming
 
 ### i. Decision Variables
-We'll use a set of binary variables ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+We'll use a set of binary variables 
+
+![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
 where 
 
