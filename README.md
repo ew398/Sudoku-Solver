@@ -1,8 +1,14 @@
 # Sudoku Solver
-In the past week , I wondered if it would be possible to automate solving a sudoku puzzle specifically with LPs (linear programs). 
-The rationale here is that linear programs are often simpler and more inferential than alternatives (such as brute force approaches and neural nets)
+This repository demonstrates how to solve sudoku using linear [specifically integer] programs. 
+The idea here is that an integer program should yield a more interpretable process than that of neural nets or more brute-force approaches like genetic algorithms.
 
-In the space below, I'll outline the basics of linear programming and show how sudoku puzzles can be tailored to an LP problem.
+The documentation below acts on the assumption that the reader is familiar with the concept of linear programs.
+In the space below, I'll elaborate on decision variables used, objective functions to pursue, and associated constraints.
+
+
+
+Decision Variables:
+We'll create a binary variable $X_{ijk}$ to show if integer i occurs in row j and column k of a given sudoku.
 
 
 Constraint 1
@@ -10,7 +16,7 @@ Constraint 1
 
 Constraint 2
 
-Constraint 3
+Constraint 3w
 
 Constraint 4
 
