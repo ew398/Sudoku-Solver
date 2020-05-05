@@ -25,7 +25,6 @@ Just for an example $X_{123} = 1$ means that value 1 occurs in row 2 column 3
 We can set this to be constant, since we're simply concerned with having all constraints satisfied.
 
 ## III. Constraints 
-**Constraints** \
 Constraint 1: Ensure that each cell is given one value 
 $\sum\limits_{i = 1}^9 {X_{ijk}} = 1:\forall j \in (1, 2, ..., 9), k \in (1, 2, ..., 9)$
 
