@@ -76,6 +76,8 @@ Constraint 3: Ensure that each value occurs in a column once
 
 Constraint 4: Ensure that each value occurs in a 3 x 3 square once 
 
+![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20\in%20R}%20\sum_{k%20\in%20C}%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20R%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209)),%20\forall%20C%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209)))
+
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
 ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
