@@ -58,7 +58,7 @@ We're simply looking for the variable arguments that satisfy all the constraints
 ### iii. Constraints 
 Constraint 1: Ensure that each cell is given one value 
 
-![formula](https://render.githubusercontent.com/render/math?math=\forall%20k%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201)
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201)
 
 
 Constraint 2: Ensure that each value occurs in a row once 
@@ -68,7 +68,7 @@ Constraint 2: Ensure that each value occurs in a row once
 
 Constraint 3: Ensure that each value occurs in a column once 
 
-![formula](https://render.githubusercontent.com/render/math?math=%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201)
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201)
 
 
 Constraint 4: Ensure that each value occurs in a 3 x 3 square once 
