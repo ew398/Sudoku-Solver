@@ -33,7 +33,7 @@ If needed, an introduction can be found here: https://en.wikipedia.org/wiki/Line
 ### i. Decision Variables
 We'll use a set of binary variables 
 
-![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209)%20:%20X_{ijk}%20\in%20(0,%201)%20)
 
 where 
 
@@ -58,49 +58,27 @@ We're simply looking for the variable arguments that satisfy all the constraints
 ### iii. Constraints 
 Constraint 1: Ensure that each cell is given one value 
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
-
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20k%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{i%20=%201}^9%20{X_{ijk}}%20=%201)
 
 
 Constraint 2: Ensure that each value occurs in a row once 
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
-
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{j%20=%201}^9%20{X_{ijk}}%20=%201)
 
 
 Constraint 3: Ensure that each value occurs in a column once 
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209))
-
+![formula](https://render.githubusercontent.com/render/math?math=%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20:%20\sum_{k%20=%201}^9%20{X_{ijk}}%20=%201)
 
 
 Constraint 4: Ensure that each value occurs in a 3 x 3 square once 
 
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20\in%20R}%20\sum_{k%20\in%20C}%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20R%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209)),%20\forall%20C%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209)))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%201}^3%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%204}^6%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%201}^3%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%204}^6%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
-![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
-
+![formula](https://render.githubusercontent.com/render/math?math=\forall%20i%20\in%20(1,%202,%203,%20...%20,%209),%20\forall%20R%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209)),%20\forall%20C%20\in%20((1,%202,%203),%20(4,%205,%206),%20(7,%208,%209))%20:%20\sum_{j%20\in%20R}%20\sum_{k%20\in%20C}%20{X_{ijk}}%20=%201,%20)
 
 
 Constraint 5: Ensure that all hints from the input are used
 
-![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for all value, row, columns specified in a puzzle
+![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for all (value, row, column) combinations specified in a puzzle
 
 
 
@@ -135,7 +113,7 @@ Subject to
 
   ![formula](https://render.githubusercontent.com/render/math?math=\sum_{j%20=%207}^9%20\sum_{k%20=%207}^9%20{X_{ijk}}%20=%201,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209))
 
-  ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for puzzle hints
+  ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20=%201) for specified puzzle hints
 
 Where ![formula](https://render.githubusercontent.com/render/math?math=X_{ijk}%20\in%20(0,%201)%20,%20\forall%20i%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20j%20\in%20(1,%202,%203,%20...%20,%209)%20,%20\forall%20k%20\in%20(1,%202,%203,%20...%20,%209))
 
