@@ -74,3 +74,16 @@ case = [    [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 assert sudoku.sudoku_solver(case) != 0
 print("PASSED: Test Case with Multiple Solutions")
+
+# Assessing run time
+case = [    [0, 0, 0, 0, 0, 9, 4, 0, 0],
+            [0, 4, 0, 6, 0, 2, 0, 0, 9],
+            [0, 2, 0, 0, 3, 0, 0, 0, 0],
+            [0, 0, 5, 0, 6, 7, 0, 9, 0],
+            [8, 0, 0, 0, 0, 0, 0, 0, 3],
+            [0, 9, 0, 8, 2, 0, 5, 0, 0],
+            [0, 0, 0, 0, 9, 0, 0, 3, 0],
+            [4, 0, 0, 5, 0, 8, 0, 6, 0],
+            [0, 0, 8, 3, 0, 0, 0, 0, 0]]
+print("\n Run time is as follows:")
+%timeit sudoku.sudoku_solver(case)
