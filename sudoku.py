@@ -1,5 +1,5 @@
 import pulp
-
+import numpy as np
 
 def sudoku_solver(puzzle):
     """
