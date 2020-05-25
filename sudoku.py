@@ -1,5 +1,6 @@
 import pulp
 
+
 def sudoku_solver(puzzle):
     """
     Precondition:
@@ -16,7 +17,6 @@ def sudoku_solver(puzzle):
 
     # Common ranges to iterate on
     nums = range(1, 10)
-    nums2 = [range(1, 4), range(4, 7), range(7, 10)]
 
     # Create linear program
     problem = pulp.LpProblem('Problem', pulp.LpMaximize) # Create maximization program
@@ -39,6 +39,7 @@ def sudoku_solver(puzzle):
             problem += (pulp.lpSum([x[(val, row, col)] for col in nums]) == 1)
 
     # Constraint 4: Ensure each cell in a 3 x 3 square has a different value
+    nums2 = [range(3 * x + 1, 3 * x + 4) for x in range(3)]
     for val in nums:
         for row3 in nums2:
             for col3 in nums2:
@@ -56,21 +57,6 @@ def sudoku_solver(puzzle):
         return 0
     else:
         # Initialize sudoku solution in 2D array
-        solution = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-        for row in nums: #update elements in the solution array
-          for col in nums:
-            val = 1
-            while x[(val, row, col)].varValue == 0:
-              val += 1
-            else:
-              solution[row - 1][col - 1] = val
-        return solution
+        solution = [int(val * x[(val, row, col)].varValue) for row in nums for col in nums for val in nums if x[(val, row, col)].varValue > 0]
+        solution2 = np.array(solution)
+        return np.reshape(solution2, (9, 9))
